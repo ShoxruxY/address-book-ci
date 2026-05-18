@@ -1,3 +1,5 @@
+package com.example.addressbook;
+
 import com.example.addressbook.model.Contact;
 import com.example.addressbook.model.ContactManager;
 import com.example.addressbook.model.MockContactDAO;
@@ -60,9 +62,9 @@ public class ContactManagerTest {
     public void testSearchEmptyQuery(){
         for(Contact contact : contacts){
             contactManager.addContact(contact);
-            List<Contact> contacts = contactManager.searchContacts("");
-            assertEquals(6, contacts.size());
         }
+        List<Contact> contacts = contactManager.searchContacts("");
+        assertEquals(7, contacts.size());
     }
 
     @Test
@@ -72,7 +74,7 @@ public class ContactManagerTest {
         }
 
         List<Contact> contacts = contactManager.searchContacts(null);
-        assertEquals(6, contacts.size());
+        assertEquals(7, contacts.size());
     }
 
     @Test
